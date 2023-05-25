@@ -6,7 +6,9 @@ def menu():
     print("1. Random quote")
     print("2. All quotes")
     print("3. Add quote")
-    print("4. Exit")
+    print("4. display quotes")
+    print("5. Exit")
+
 
 
 def main():
@@ -14,7 +16,7 @@ def main():
         quotes = load_quotes("quotes.txt")
         menu()
 
-        choice = input("Choose your an action (1-4): ")
+        choice = input("Choose your an action (1-5): ")
 
         if choice == "1":
             print_quote(random_quote(quotes))
@@ -22,11 +24,15 @@ def main():
             view_quotes(quotes)
         elif choice == "3":
             add_quote(quotes, "quotes.txt")
-        elif choice == "4":
+        elif choice == "5":
             print("Good bye...")
             break
+        elif choice == "4" :# gestion de display_count()
+            count = int(input("Enter the number of quotes to display: "))
+            display_quotes(quotes, count)
         else:
             print("Invalid input")
+
 
 
 if __name__ == "__main__":
