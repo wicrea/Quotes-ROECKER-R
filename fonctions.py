@@ -20,4 +20,3 @@ def print_quote(quote):
 def view_quotes(quotes):
     for quote in quotes:
         print_quote(quote)
-        
